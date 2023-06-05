@@ -1,12 +1,15 @@
 part of 'welcome_bloc.dart';
 
 @immutable
-class WelcomeState {
+class WelcomeState extends Equatable {
   final int indexPage;
 
-  const WelcomeState({required this.indexPage});
+  const WelcomeState(this.indexPage);
+
+  @override
+  List<Object?> get props => [indexPage];
 }
 
-class WelcomeInitial extends WelcomeState {
-  const WelcomeInitial() : super(indexPage: 0);
+class WelcomeInitialState extends WelcomeState {
+  const WelcomeInitialState() : super(0);
 }
