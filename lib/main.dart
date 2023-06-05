@@ -1,4 +1,5 @@
-import 'package:course_selling_app/presentation/welcome/welcome.dart';
+import 'package:course_selling_app/presentation/sign_in/sign_in_screen.dart';
+import 'package:course_selling_app/presentation/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,7 +17,10 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
         ),
-        home: const Welcome(),
+        routes: {
+          "/": (context) => const WelcomeScreen(),
+          SignInScreen.routeName: (context) => const SignInScreen(),
+        },
       ),
     );
   }

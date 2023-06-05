@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-part of "welcome.dart";
+part of '../welcome_screen.dart';
 
 class _WelcomePage extends StatelessWidget {
   const _WelcomePage({
@@ -10,6 +10,7 @@ class _WelcomePage extends StatelessWidget {
     required this.subTitle,
     required this.imagePath,
     required this.buttonTitle,
+    required this.pagesAmount,
   }) : super(key: key);
 
   final PageController pageController;
@@ -18,7 +19,7 @@ class _WelcomePage extends StatelessWidget {
   final String subTitle;
   final String imagePath;
   final String buttonTitle;
-  final int pagesAmount = 3;
+  final int pagesAmount;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,25 +44,32 @@ class _WelcomePage extends StatelessWidget {
           ),
         ],
       ),
-      child: TextButton(
-        onPressed: () {
-          if (index < pagesAmount - 1) {
-            pageController.animateToPage(index + 1,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.decelerate);
-          } else {
-            // todo: add navigation to next screen
-          }
-        },
-        child: Text(
-          buttonTitle,
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.normal),
-        ),
-      ),
+      child: Builder(builder: (context) {
+        return TextButton(
+          onPressed: () {
+            _buttonFunction(context);
+          },
+          child: Text(
+            buttonTitle,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.normal),
+          ),
+        );
+      }),
     );
+  }
+
+  void _buttonFunction(BuildContext context) {
+    if (index < pagesAmount - 1) {
+      pageController.animateToPage(index + 1,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.decelerate);
+    } else {
+      Navigator.pushNamedAndRemoveUntil(
+          context, SignInScreen.routeName, (route) => false);
+    }
   }
 
   Container get _subtitle {
