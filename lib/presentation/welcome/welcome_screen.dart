@@ -69,7 +69,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             return DotsIndicator(
               dotsCount: _pagesData(_pageController).length,
               position: state.indexPage,
-              decorator: _dotsDecorator(),
+              decorator: _dotsDecorator,
             );
           },
         );

@@ -1,6 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 part of '../welcome_screen.dart';
 
+/// this is the welcome page that will be shown in the welcome screen
+/// it takes the [title] and [subTitle] and [imagePath] and [buttonTitle]
+
 class _WelcomePage extends StatelessWidget {
   const _WelcomePage({
     Key? key,

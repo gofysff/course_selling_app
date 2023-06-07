@@ -1,6 +1,6 @@
 part of '../welcome_screen.dart';
 
-DotsDecorator _dotsDecorator() {
+DotsDecorator get _dotsDecorator {
   return DotsDecorator(
     activeColor: Colors.blue,
     size: Size.square(7.r),

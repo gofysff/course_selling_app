@@ -18,7 +18,8 @@ class MainApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routes: {
-          "/": (context) => const WelcomeScreen(),
+          "/": (context) => const SignInScreen(),
+          WelcomeScreen.routeName: (context) => const WelcomeScreen(),
           SignInScreen.routeName: (context) => const SignInScreen(),
         },
       ),
