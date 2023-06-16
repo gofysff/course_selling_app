@@ -28,57 +28,62 @@ class _SignInScreenState extends State<SignInScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: _appBar,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              _getThirdPartyLoginPart,
-              const _ReusableText(
-                "Or use your email to login",
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 100.h, left: 20.w, right: 20.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _CustomTextField(
-                      iconName: "user",
-                      label: const _ReusableText("Email"),
-                      hintText: "Enter your email",
-                      controller: _emailController,
-                    ),
-                    SizedBox(height: 30.h),
-                    _CustomTextField(
-                      iconName: "lock",
-                      label: const _ReusableText("Password"),
-                      hintText: "Enter your password",
-                      controller: _passwordController,
-                      isObscure: true,
-                    ),
+        body: _body,
+      ),
+    );
+  }
 
-                    // text button to reset password
-                    _ForgotPasswordButton(onPressed: () {}),
-
-                    SizedBox(height: 70.h),
-                    // login button
-                    _LoginAndRegistrationButton(
-                      onPressed: () {},
-                      text: "Log In",
-                      color: Colors.black,
-                      textColor: Colors.white,
-                    ),
-                    SizedBox(height: 20.h),
-                    _LoginAndRegistrationButton(
-                      onPressed: () {},
-                      text: "Register",
-                      color: Colors.white,
-                      textColor: Colors.black,
-                    ),
-                  ],
-                ),
-              ),
-            ],
+  SingleChildScrollView get _body {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _getThirdPartyLoginPart,
+          const _ReusableText(
+            "Or use your email to login",
           ),
-        ),
+          Padding(
+            padding: EdgeInsets.only(top: 100.h, left: 20.w, right: 20.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _CustomTextField(
+                  iconName: "user",
+                  label: const _ReusableText("Email"),
+                  hintText: "Enter your email",
+                  controller: _emailController,
+                ),
+                SizedBox(height: 30.h),
+                _CustomTextField(
+                  iconName: "lock",
+                  label: const _ReusableText("Password"),
+                  hintText: "Enter your password",
+                  controller: _passwordController,
+                  isObscure: true,
+                ),
+
+                // text button to reset password
+                _ForgotPasswordButton(onPressed: () {}),
+
+                SizedBox(height: 70.h),
+                // login button
+                _LoginAndRegistrationButton(
+                  onPressed: () {},
+                  text: "Log In",
+                  color: Colors.black,
+                  textColor: Colors.white,
+                ),
+                // registration button
+                SizedBox(height: 20.h),
+                _LoginAndRegistrationButton(
+                  onPressed: () {},
+                  text: "Register",
+                  color: Colors.white,
+                  textColor: Colors.black,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
