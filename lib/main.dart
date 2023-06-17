@@ -1,7 +1,6 @@
-import 'package:course_selling_app/presentation/sign_in/sign_in_screen.dart';
-import 'package:course_selling_app/presentation/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'presentation/routers/app_router.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,14 +13,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       builder: (context, child) => MaterialApp(
-        theme: ThemeData(
-          useMaterial3: true,
-        ),
-        routes: {
-          "/": (context) => const SignInScreen(),
-          WelcomeScreen.routeName: (context) => const WelcomeScreen(),
-          SignInScreen.routeName: (context) => const SignInScreen(),
-        },
+        theme: ThemeData(useMaterial3: true),
+        debugShowCheckedModeBanner: false,
+        initialRoute: AppRouter.home,
+        onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),
       ),
     );
   }
