@@ -12,12 +12,14 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      builder: (context, child) => MaterialApp(
-        theme: ThemeData(useMaterial3: true),
-        debugShowCheckedModeBanner: false,
-        initialRoute: AppRouter.home,
-        onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),
-      ),
+      builder: (context, child) {
+        return MaterialApp(
+          theme: ThemeData(useMaterial3: true),
+          debugShowCheckedModeBanner: false,
+          initialRoute: AppRouter.home,
+          onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),
+        );
+      },
     );
   }
 }

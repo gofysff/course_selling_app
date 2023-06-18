@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:course_selling_app/logic/blocs/welcome/welcome_bloc.dart';
 
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../sign_in/sign_in_screen.dart';
+import 'bloc/welcome_bloc.dart';
 
 part 'widgets/welcome_page.dart';
 part 'widgets/dots_decorator.dart';

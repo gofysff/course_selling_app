@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:course_selling_app/logic/blocs/welcome/welcome_bloc.dart';
+import 'package:course_selling_app/presentation/modules/welcome/bloc/welcome_bloc.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 
