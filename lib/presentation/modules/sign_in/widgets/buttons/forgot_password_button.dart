@@ -12,7 +12,7 @@ class _ForgotPasswordButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       child: Text(
-        "Forgot password",
+        forgotPasswordButtonText,
         style: TextStyle(
             color: Colors.black,
             decoration: TextDecoration.underline,

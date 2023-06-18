@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'res.dart';
+
 part 'widgets/buttons/forgot_password_button.dart';
 part 'widgets/buttons/third_party_login_button.dart';
 part 'widgets/buttons/login_and_registration_button.dart';
@@ -38,9 +40,7 @@ class _SignInScreenState extends State<SignInScreen> {
       child: Column(
         children: [
           _getThirdPartyLoginPart,
-          const _ReusableText(
-            "Or use your email to login",
-          ),
+          const _ReusableText(useEmailToLoginText),
           Padding(
             padding: EdgeInsets.only(top: 100.h, left: 20.w, right: 20.w),
             child: Column(
@@ -48,15 +48,15 @@ class _SignInScreenState extends State<SignInScreen> {
               children: [
                 _CustomTextField(
                   iconName: "user",
-                  label: const _ReusableText("Email"),
-                  hintText: "Enter your email",
+                  label: const _ReusableText(emailTextFieldLabelText),
+                  hintText: emailTextFieldHintText,
                   controller: _emailController,
                 ),
                 SizedBox(height: 30.h),
                 _CustomTextField(
                   iconName: "lock",
-                  label: const _ReusableText("Password"),
-                  hintText: "Enter your password",
+                  label: const _ReusableText(passwordTextFieldLabelText),
+                  hintText: passwordTextFieldHintText,
                   controller: _passwordController,
                   isObscure: true,
                 ),
@@ -68,7 +68,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 // login button
                 _LoginAndRegistrationButton(
                   onPressed: () {},
-                  text: "Log In",
+                  text: loginButtonText,
                   color: Colors.black,
                   textColor: Colors.white,
                 ),
@@ -76,7 +76,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(height: 20.h),
                 _LoginAndRegistrationButton(
                   onPressed: () {},
-                  text: "Register",
+                  text: registrationButtonText,
                   color: Colors.white,
                   textColor: Colors.black,
                 ),

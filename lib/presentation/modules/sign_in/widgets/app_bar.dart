@@ -11,7 +11,7 @@ AppBar get _appBar {
     ),
     title: Center(
       child: Text(
-        "Log In",
+        appBarText,
         style: TextStyle(color: Colors.black, fontSize: 16.spMin),
       ),
     ),

@@ -11,13 +11,13 @@ class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case home:
-        return MaterialPageRoute(
-          builder: (_) => const SignInScreen(),
-        );
+        continue welcome;
+      welcome:
       case WelcomeScreen.routeName:
         return MaterialPageRoute(
           builder: (_) => const WelcomeScreen(),
         );
+
       case SignInScreen.routeName:
         return MaterialPageRoute(
           builder: (_) => const SignInScreen(),

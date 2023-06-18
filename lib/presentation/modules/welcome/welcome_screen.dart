@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../sign_in/sign_in_screen.dart';
 import 'bloc/welcome_bloc.dart';
+import 'res.dart';
 
 part 'widgets/welcome_page.dart';
 part 'widgets/dots_decorator.dart';
