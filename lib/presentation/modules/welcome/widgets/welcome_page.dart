@@ -26,17 +26,22 @@ class _WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [_image, _title, _subtitle, _nextButton],
+      children: [
+        _image,
+        _title(context),
+        _subtitle(context),
+        _nextButton(context)
+      ],
     );
   }
 
-  Container get _nextButton {
+  Container _nextButton(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 100.h, left: 25.w, right: 25.w),
       width: 325.w,
       height: 50.h,
       decoration: BoxDecoration(
-        color: Colors.blue,
+        color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(10.r),
         boxShadow: [
           BoxShadow(
@@ -75,7 +80,7 @@ class _WelcomePage extends StatelessWidget {
     }
   }
 
-  Container get _subtitle {
+  Container _subtitle(BuildContext context) {
     return Container(
       width: 360.w,
       height: 50.h,
@@ -84,7 +89,9 @@ class _WelcomePage extends StatelessWidget {
         child: Text(
           subTitle,
           style: TextStyle(
-              color: Colors.black.withOpacity(0.5),
+              color: Theme.of(context)
+                  .extension<AppTextColors>()!
+                  .primarySecondaryElementText,
               fontSize: 14.sp,
               fontWeight: FontWeight.normal),
         ),
@@ -92,11 +99,13 @@ class _WelcomePage extends StatelessWidget {
     );
   }
 
-  Text get _title {
+  Text _title(BuildContext context) {
     return Text(
       title,
       style: TextStyle(
-          color: Colors.black, fontSize: 24.sp, fontWeight: FontWeight.normal),
+          color: Theme.of(context).extension<AppTextColors>()!.primaryText,
+          fontSize: 24.sp,
+          fontWeight: FontWeight.normal),
     );
   }
 

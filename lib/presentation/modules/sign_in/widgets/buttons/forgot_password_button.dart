@@ -14,9 +14,10 @@ class _ForgotPasswordButton extends StatelessWidget {
       child: Text(
         forgotPasswordButtonText,
         style: TextStyle(
-            color: Colors.black,
+            color: context.primaryText,
             decoration: TextDecoration.underline,
-            decorationColor: Colors.blue.withOpacity(0.5),
+            decorationColor:
+                Theme.of(context).extension<AppTextColors>()!.primaryText,
             fontSize: 14.spMin),
       ),
     );

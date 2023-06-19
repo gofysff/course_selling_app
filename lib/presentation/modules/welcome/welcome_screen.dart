@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:course_selling_app/presentation/themes/extensions/app_text_colors.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +32,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       create: (context) => WelcomeBloc(),
       child: SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
+          // backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).colorScheme.background,
           body: Container(
             margin: EdgeInsets.only(top: 34.h),
             width: 360.w,
@@ -71,7 +73,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             return DotsIndicator(
               dotsCount: _pagesData(_pageController).length,
               position: state.indexPage,
-              decorator: _dotsDecorator,
+              decorator: _dotsDecorator(context),
             );
           },
         );

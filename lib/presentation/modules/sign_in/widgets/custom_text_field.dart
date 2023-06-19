@@ -36,7 +36,7 @@ class _CustomTextField extends StatelessWidget {
           label: label,
           hintText: hintText,
           hintStyle: TextStyle(
-            color: Colors.grey.withOpacity(0.5),
+            color: context.primarySecondaryElementText,
             fontSize: 14.sp,
           ),
         ),
@@ -49,6 +49,7 @@ class _CustomTextField extends StatelessWidget {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(10.r),
       borderSide: BorderSide(
+        // TODo: move this color to theme
         color: Colors.grey.withOpacity(0.5),
       ),
     );

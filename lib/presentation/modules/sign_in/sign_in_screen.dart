@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:course_selling_app/presentation/themes/extensions/app_text_colors.dart';
+import 'package:course_selling_app/presentation/themes/extensions/specific_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,15 +29,16 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: _appBar,
-        body: _body,
-      ),
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: _appBar(context),
+      body: SafeArea(child: _body),
     );
   }
 
   SingleChildScrollView get _body {
+    final appTextColors = Theme.of(context).extension<AppTextColors>()!;
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -69,16 +72,16 @@ class _SignInScreenState extends State<SignInScreen> {
                 _LoginAndRegistrationButton(
                   onPressed: () {},
                   text: loginButtonText,
-                  color: Colors.black,
-                  textColor: Colors.white,
+                  color: Theme.of(context).colorScheme.primary,
+                  textColor: appTextColors.primaryElementText,
                 ),
                 // registration button
                 SizedBox(height: 20.h),
                 _LoginAndRegistrationButton(
                   onPressed: () {},
                   text: registrationButtonText,
-                  color: Colors.white,
-                  textColor: Colors.black,
+                  color: Theme.of(context).colorScheme.background,
+                  textColor: appTextColors.primaryText,
                 ),
               ],
             ),

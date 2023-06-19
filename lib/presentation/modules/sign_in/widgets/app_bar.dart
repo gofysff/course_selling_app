@@ -1,18 +1,19 @@
 part of '../sign_in_screen.dart';
 
-AppBar get _appBar {
+AppBar _appBar(BuildContext context) {
   return AppBar(
+    backgroundColor: Theme.of(context).colorScheme.background,
     bottom: PreferredSize(
       preferredSize: Size.fromHeight(1.h),
       child: Container(
-        color: Colors.grey.withOpacity(0.5),
+        color: Theme.of(context).colorScheme.secondary,
         height: 1.h,
       ),
     ),
     title: Center(
       child: Text(
         appBarText,
-        style: TextStyle(color: Colors.black, fontSize: 16.spMin),
+        style: Theme.of(context).textTheme.titleMedium,
       ),
     ),
   );

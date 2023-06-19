@@ -1,3 +1,4 @@
+import 'package:course_selling_app/presentation/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'presentation/routers/app_router.dart';
@@ -14,7 +15,7 @@ class MainApp extends StatelessWidget {
     return ScreenUtilInit(
       builder: (context, child) {
         return MaterialApp(
-          theme: ThemeData(useMaterial3: true),
+          theme: AppTheme.lightTheme,
           debugShowCheckedModeBanner: false,
           initialRoute: AppRouter.home,
           onGenerateRoute: (settings) => AppRouter.onGenerateRoute(settings),

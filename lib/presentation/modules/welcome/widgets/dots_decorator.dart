@@ -1,8 +1,8 @@
 part of '../welcome_screen.dart';
 
-DotsDecorator get _dotsDecorator {
+DotsDecorator _dotsDecorator(BuildContext context) {
   return DotsDecorator(
-    activeColor: Colors.blue,
+    activeColor: Theme.of(context).colorScheme.primary,
     size: Size.square(7.r),
     activeSize: Size(18.r, 7.r),
     activeShape: RoundedRectangleBorder(

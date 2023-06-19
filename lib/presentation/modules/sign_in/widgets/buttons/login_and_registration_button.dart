@@ -29,7 +29,10 @@ class _LoginAndRegistrationButton extends StatelessWidget {
         style: TextButton.styleFrom(
           backgroundColor: color,
           shape: RoundedRectangleBorder(
-            side: const BorderSide(),
+            side: BorderSide(
+              color: context.specificColors.border,
+              width: 1,
+            ),
             borderRadius: BorderRadius.circular(15.r),
           ),
         ),
